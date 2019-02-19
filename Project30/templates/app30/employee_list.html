@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <h1> All Employee's Details </h1>
+
+        <table align="center" border="2">
+            <tr>
+                <th width="100">Idno</th>
+                <th width="100">Name</th>
+                <th width="100">Salary</th>
+                <th width="100">Designation</th>
+            </tr>
+
+
+        {% for x in object_list %}
+            <tr>
+                <td width="100">{{ x.idno }}</td>
+                <td width="100">{{ x.name }}</td>
+                <td width="100">{{ x.salary }}</td>
+                <td width="100">{{ x.designation }}</td>
+            </tr>
+        {% endfor %}
+
+        </table>
+</body>
+</html>

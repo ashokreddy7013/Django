@@ -1,0 +1,31 @@
+
+<table align="center" border="2">
+    <tr>
+        <th colspan="5"> Employee Details </th>
+    </tr>
+    <tr>
+        <th>IDNO</th>
+        <th>NAME</th>
+        <th>SALARY</th>
+    </tr>
+
+    {% for x in emp %}
+        <tr>
+            <td align="center">{{ x.idno }}</td>
+            <td align="center">{{ x.name }}</td>
+            <td align="center">{{ x.salary }}</td>
+            <td align="center">
+                <form action="/update{{ x.idno }}/" method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="Update">
+                </form>
+            </td>
+            <td align="center">
+                <form action="/delete{{ x.idno }}/" method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+</table>

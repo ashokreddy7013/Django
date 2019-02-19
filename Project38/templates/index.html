@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <form action="/search/" method="post">
+            {% csrf_token %}
+        <input type="text" name="t1" placeholder="Search" required>
+        <input type="submit" value="Search">
+
+            </form>
+
+            <h1>{{ message }}</h1>
+
+<h2> {% now "SHORT_DATE_FORMAT" %}   </h2>
+<h2> {% now "DATETIME_FORMAT" %}   </h2>
+<h2> {% now "DATE_FORMAT" %}   </h2>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <form action="/opencsv/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Download in CSV Format">
+        </form>
+
+        <br>
+
+        <form action="/openpdf/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Download in PDF Format">
+        </form>
+</body>
+</html>

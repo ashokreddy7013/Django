@@ -1,0 +1,8 @@
+
+{% for x in art %}
+    <h2>{{ x.headline }}
+    {% for y in x.public.all %}
+         --- {{ y.title }}
+        {% endfor %}
+    </h2>
+{% endfor %}`

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/saveproduct/" method="post">
+        {% csrf_token %}
+        <table align="center">
+            <tr>
+                <th>Product Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" name="t1" placeholder="No" required value="{{ no }}" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="t2" placeholder="Name" required value="{{ name }}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" name="t3" placeholder="Price" required value="{{ price }}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Save">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+
+       <table align="center" border="2">
+           <tr>
+               <th width="100">
+                   Number
+               </th>
+               <th width="100">
+                   Name
+               </th>
+                               <th width="100">
+                   Price
+               </th>
+                              <th width="100">
+                   Update
+               </th>
+                               <th width="100">
+                   Delete
+               </th>
+           </tr>
+            {% for x,y in data.items %}
+                <tr>
+                <td>
+                    {{ x }}
+                </td>
+                <td>
+                    {{ y.name }}
+                </td>
+                <td>
+                    {{ y.price }}
+                </td>
+                <td align="center">
+                    <a href="/updateproduct/?up={{ x }}">Update</a>
+                </td>
+
+                    <form action="/deleteproduct/" method="post">
+                        {% csrf_token %}
+
+                <td align="center">
+                    <input type="hidden" name="dp" value="{{ x }}">
+                    <input type="submit" value="Delete">
+                </td>
+                    </form>
+
+                </tr>
+            {% endfor %}
+       </table>
+
+</body>
+</html>

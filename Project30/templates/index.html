@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <form action="/saveDetails/" method="post">
+            {% csrf_token %}
+            <table align="center">
+                <tr>
+                    <td><input type="number" name="t1" placeholder="IDNO" required></td>
+                </tr>
+                                <tr>
+                    <td><input type="text" name="t2" placeholder="NAME" required></td>
+                </tr>
+                            <tr>
+                    <td><input type="number" name="t3" placeholder="SALARY" required></td>
+                </tr>
+                            <tr>
+                    <td><input type="text" name="t4" placeholder="DESIGNATION" required></td>
+                </tr>
+                                                            <tr>
+                    <td><input type="submit" value="Register"></td>
+                </tr>
+
+                <tr>
+                    <th bgcolor="yellow"><font color="#a52a2a">{{ message }}</font> </th>
+                </tr>
+            </table>
+        </form>
+
+        <a href="/viewall/">
+            <h3>
+                View All Employee's
+            </h3>
+        </a>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% comment %}<table align="center" border="2">
+    <tr>
+        <th colspan="6"> All Student Details </th>
+    </tr>
+    <tr>
+        <th width="150">IDNO</th>
+        <th width="150">NAME</th>
+        <th width="150">CLASS</th>
+        <th width="150">TOTAL</th>
+        <th width="150">AVERAGE</th>
+        <th width="150">GRADE</th>
+    </tr>
+
+    {% for x in object_list %}
+        <tr>
+        <td width="150" align="center">{{ x.idno }}</td>
+        <td width="150" align="center">{{ x.name }}</td>
+        <td width="150" align="center">{{ x.clas }}</td>
+        <td width="150" align="center">{{ x.total }}</td>
+        <td width="150" align="center">{{ x.average }}</td>
+        <td width="150" align="center">{{ x.grade }}</td>
+
+    </tr>
+    {% endfor %}
+</table>{% endcomment %}
+
+
+<table align="center" border="2" bgcolor="yellow">
+    <tr bgcolor="#a52a2a">
+        <th colspan="6"> All Student Details </th>
+    </tr>
+    <tr>
+        <th width="150">IDNO</th>
+        <th width="150">NAME</th>
+        <th width="150">GRADE</th>
+    </tr>
+    {% for x in object_list %}
+        <tr>
+        <td width="150" align="center">{{ x.idno }}</td>
+        <td width="150" align="center">{{ x.name }}</td>
+        <td width="150" align="center">{{ x.grade }}</td>
+        <td width="150" align="center">{{ x.clas }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+            <form action="/send/" method="post">
+                {% csrf_token %}
+                <table align="center">
+                    <tr>
+                        <td>
+                            <input type="text" placeholder="To" name="to">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <input type="text" placeholder="Subject" name="sub">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea name="message">
+
+                            </textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Send">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+            <h1>{{ message }}</h1>
+</body>
+</html>

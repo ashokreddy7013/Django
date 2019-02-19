@@ -1,0 +1,23 @@
+
+<h2>
+{% for x in p %}
+    {{ x.name }}  --- {{ x.contactno }}<br>
+{% endfor %}
+</h2>
+
+
+{% if p.has_previous %}
+    <h1>
+        <a href="/show/?no={{ p.previous_page_number  }}">
+            Previous Page
+        </a>
+
+{% endif %}
+    ---------------
+{% if p.has_next %}
+
+        <a href="/show/?no={{ p.next_page_number  }}">
+            Next Page
+        </a>
+    </h1>
+{% endif %}
